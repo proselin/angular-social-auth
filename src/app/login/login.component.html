@@ -1,0 +1,27 @@
+<div id="container">
+  <div id="left">
+    <ng-container  *ngIf="!facebookRes && !googleRes">
+      <h1 id="welcome">Welcome</h1>
+      <p id="lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+        Vivamus sodales eros non arcu pellentesque convallis.<br>
+        Nunc dignissim lectus in malesuada porta.<br>
+        Proin ac erat sed urna congue suscipit.<br>
+        Morbi aliquet eget nisl id ornare.
+      </p>
+    </ng-container>
+  <ng-container  *ngIf="facebookRes || googleRes">
+    <h1 id="welcome" class="mt-100 animate__animated animate__fadeInDown">Response</h1>
+    <p id="lorem" class="animate__animated" >
+      <textarea rows="20" cols="50" style="" [value]="facebookRes || googleRes">
+      </textarea>
+    </p>
+  </ng-container >
+
+  </div>
+  <div id="right">
+    <h1 id="login">LogIn</h1><br>
+    <button class="social" id="facebook" (click)="loginWithFacebook()">connect with facebook</button>
+    <button class="social" id="google" (click)="signInHandler()">connect with google</button>
+  </div>
+</div>
